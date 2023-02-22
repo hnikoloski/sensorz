@@ -1,0 +1,177 @@
+.sensorz-hero-block {
+  padding: 150px;
+  outline: 1px solid #000;
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    .content {
+      flex: 0 0 595px;
+      max-width: 595px;
+      width: 100%;
+      h1 {
+        @include textColorPrimary();
+        font-weight: 800;
+        font-size: 96px;
+        line-height: 1.23;
+        text-transform: uppercase;
+        margin-bottom: 23px;
+      }
+      p {
+        color: $primary;
+        font-weight: 600;
+        font-size: 22px;
+        line-height: 1.36;
+      }
+    }
+    .video-wrapper {
+      flex: 0 0 621px;
+      max-width: 621px;
+      width: 100%;
+      .deco-wrapper {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -96px;
+          left: -68px;
+          width: 91px;
+          height: 154px;
+          @include rotate(135);
+          background: url("../../assets/images/deco-lines.svg");
+          @include bg-props(contain, center, no-repeat);
+          opacity: 0.23;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: -57px;
+          right: -46px;
+          width: 52px;
+          height: 88px;
+          @include rotate(-40.21);
+          background: url("../../assets/images/deco-lines.svg");
+          @include bg-props(contain, center, no-repeat);
+          opacity: 0.66;
+        }
+        .deco-line {
+          position: absolute;
+          height: 29px;
+          filter: drop-shadow(0px 0.4px 3px #c0c0c0);
+          z-index: 9;
+          background: linear-gradient(
+            92.69deg,
+            rgba(223, 97, 120, 0.62) 4.46%,
+            rgba(223, 97, 120, 0) 73.66%
+          );
+          @include borderRadius(23px);
+          &:nth-of-type(1) {
+            width: 332px;
+            top: 52px;
+            left: -180px;
+            @include rotate(-180);
+          }
+          &:nth-of-type(2) {
+            background: linear-gradient(
+              269.73deg,
+              #857bb7 11.08%,
+              rgba(133, 123, 183, 0) 73.22%
+            );
+            filter: drop-shadow(0px 0.4px 3px rgba(133, 123, 183, 0.27));
+            width: 221px;
+            height: 38px;
+            top: 89px;
+            left: -130px;
+            @include rotate(0);
+            opacity: 0.44;
+          }
+          &:nth-of-type(3) {
+            bottom: -15px;
+            right: -130px;
+            width: 332px;
+          }
+        }
+      }
+      .video-js {
+        background: none;
+        background-color: transparent;
+        padding-top: 0;
+        width: 100%;
+        height: 316px;
+        * {
+          background: none;
+          background-color: transparent;
+        }
+        picture {
+          width: 100%;
+          height: 100%;
+          @include borderRadius(38px);
+          overflow: hidden;
+          img {
+            @include fullSizeImg(cover);
+          }
+        }
+      }
+      video {
+        width: 100%;
+        @include borderRadius(38px);
+        height: 100%;
+        position: relative;
+        object-fit: cover;
+        -o-object-fit: cover;
+        object-position: center;
+        -o-object-position: center;
+      }
+    }
+  }
+  .image-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 26px;
+    @include borderRadius(22px);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0px 0.4px 6px #e7e8f7;
+    margin: 80px auto 0 auto;
+    width: fit-content;
+    width: -moz-fit-content;
+    .single-box {
+      flex: 0 0 150px;
+      max-width: 150px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: center;
+      justify-content: flex-start;
+      &:not(:last-of-type) {
+        margin-right: 16px;
+      }
+      .img-wrapper {
+        flex: 0 0 50px;
+        max-width: 50px;
+        width: 50px;
+        height: 50px;
+        padding: 12px;
+        @include borderRadius(23px);
+        box-shadow: 0 4px 30px var(--shadowColor);
+        margin-right: 19px;
+        img {
+          @include fullSizeImg(contain);
+        }
+      }
+      p {
+        flex: 0 0 calc(100% - 70px - 19px - 20px);
+        max-width: calc(100% - 70px - 19px - 20px);
+        width: calc(100% - 70px - 19px - 20px);
+        color: $primary;
+        font-size: 12px;
+        line-height: 1.35;
+      }
+    }
+  }
+}

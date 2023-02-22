@@ -1,0 +1,28 @@
+.sensorz-trusted-by-block {
+  padding: 7rem 0 16rem 0;
+  @include for-tablet {
+    padding: 7rem 0 7rem 0;
+  }
+  * {
+    transition: 0s;
+  }
+  .section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .swiper {
+    .swiper-wrapper {
+      transition-timing-function: linear;
+      .swiper-slide {
+        height: 10rem;
+        .img-wrapper {
+          height: 100%;
+          width: auto;
+          img {
+            @include fullSizeImg(contain);
+          }
+        }
+      }
+    }
+  }
+}

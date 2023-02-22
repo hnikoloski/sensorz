@@ -1,0 +1,22 @@
+.single-post-styles {
+  b,
+  strong {
+    font-weight: 700;
+  }
+  p {
+    font-size: 1.8rem;
+    &:not(:last-of-type) {
+      margin-bottom: 2.4rem;
+    }
+  }
+  li {
+    font-size: 1.8rem;
+    &:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
+  }
+  ul {
+    padding-left: 1.6rem;
+    list-style: disc;
+  }
+}

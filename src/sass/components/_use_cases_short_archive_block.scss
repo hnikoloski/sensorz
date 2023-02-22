@@ -1,0 +1,113 @@
+.sensorz-use-cases-short-archive-block {
+  padding: 0 36rem 10rem 36rem;
+  background: #eff0f5;
+  @include for-tablet {
+    padding: 0 2rem 10rem 2rem;
+  }
+  > header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 8rem;
+    @include for-tablet {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: flex-start;
+      padding-bottom: 3rem;
+    }
+    .section-title {
+      opacity: 0.12;
+      padding-top: 3rem;
+      margin-right: 3rem;
+    }
+    .single-post-header {
+      flex: 0 0 15rem;
+      width: 15rem;
+      max-width: 15rem;
+      padding: 1.2rem 1.5rem 2.2rem 1.5rem;
+      background: #fff;
+      box-shadow: 0px 0.4rem 2rem rgba(0, 0, 0, 0.06);
+      height: inherit;
+      position: relative;
+      cursor: pointer;
+
+      &::after {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent #eff0f5 transparent;
+        border-width: 0;
+        transition: 0.3s;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent transparent #eff0f5;
+        border-width: 0;
+        transition: 0.3s;
+      }
+      &:hover {
+        @include primaryGradient();
+        .icon {
+          background: var(--hoverIconUrl);
+          @include bg-props(contain, center, no-repeat);
+        }
+        h4 {
+          color: #fff;
+        }
+      }
+      &.active {
+        @include primaryGradient();
+        box-shadow: none;
+        .icon {
+          background: var(--hoverIconUrl);
+          @include bg-props(contain, center, no-repeat);
+        }
+        &::after {
+          border-width: 0 0 2.4rem 7.2rem;
+          opacity: 1;
+        }
+        &::before {
+          border-width: 2.4rem 0 0 7.2rem;
+          opacity: 1;
+        }
+        h4 {
+          color: #fff;
+          font-weight: 700;
+        }
+      }
+      &:not(:last-of-type) {
+        margin-right: 2.8rem;
+      }
+      .icon {
+        height: 5rem;
+        width: auto;
+        margin: 0 auto 1.4rem auto;
+        background: var(--iconUrl);
+        @include bg-props(contain, center, no-repeat);
+      }
+      h4 {
+        text-align: center;
+        color: $primary;
+        font-size: 1.8rem;
+      }
+    }
+  }
+  .posts-container {
+    .single-post {
+      display: none;
+      transition: 0s;
+    }
+  }
+}

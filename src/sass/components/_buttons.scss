@@ -1,0 +1,17 @@
+.btn {
+  padding: 0.9rem 4rem;
+  display: inline-block;
+  &-primary {
+    color: #fff;
+    @include primaryGradient();
+    font-size: 1.8rem;
+    line-height: 1.38;
+    @include borderRadius(2.2rem);
+    @include for-tablet {
+      @include borderRadius(3.2rem);
+    }
+    &:hover {
+      @include secondaryGradient();
+    }
+  }
+}

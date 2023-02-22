@@ -1,0 +1,36 @@
+.section-title {
+  font-weight: 700;
+  font-size: 3.7rem;
+  line-height: 1.378;
+  &-dark-gradient {
+    background: linear-gradient(
+      281.18deg,
+      #363aa5 -10.68%,
+      #27124b 48.54%,
+      #050732 88.19%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  &-light {
+    color: #eff0f5;
+  }
+  &-primary {
+    color: $primary;
+  }
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+.fw-bold {
+  font-weight: 700;
+}
+.fw-bolder {
+  font-weight: 800;
+}
+.fw-black {
+  font-weight: 900;
+}

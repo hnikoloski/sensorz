@@ -1,0 +1,25 @@
+.sensorz-trusted-by-block {
+  .section-title {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  .swiper {
+    .swiper-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      .swiper-slide {
+        height: 100px;
+        width: 100px;
+        .img-wrapper {
+          height: 100%;
+          width: auto;
+          img {
+            @include fullSizeImg(contain);
+          }
+        }
+      }
+    }
+  }
+}
