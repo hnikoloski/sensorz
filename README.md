@@ -1,2 +1,1 @@
-# wp-starter
-Wordpress Starter theme Template
+# Sensorz Wordpress theme
