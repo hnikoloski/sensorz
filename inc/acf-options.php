@@ -35,6 +35,3 @@ if (function_exists('acf_add_options_page')) {
     //     'parent_slug'   => 'theme-general-settings',
     // ));
 }
-
-
-// Create a hidden cpt called Tech Icons. It only has a title field.
