@@ -1,0 +1,54 @@
+{
+    "key": "group_63f7e5d388f31",
+    "title": "Select Icons",
+    "fields": [
+        {
+            "key": "field_63f7e5d3a9162",
+            "label": "Select Which icons to show",
+            "name": "icon_selector",
+            "aria-label": "",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/Group-485.svg": "4g",
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/Group-486.svg": "5g",
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/image-35.svg": "LoRa",
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/image-45.svg": "Zigbee",
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/image-34.svg": "wi-fi",
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/Vector.svg": "Bluetooth"
+            },
+            "default_value": [],
+            "return_format": "array",
+            "allow_custom": 0,
+            "layout": "vertical",
+            "toggle": 1,
+            "save_custom": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/tech-icons"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1677191469
+}

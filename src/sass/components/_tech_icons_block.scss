@@ -1,0 +1,26 @@
+.sensorz-tech-icons-block {
+  ul.icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    li {
+      @include borderRadius(50%);
+      background: #fff;
+      box-shadow: 0px 0.4rem 3rem var(--shadow-color);
+      width: 4.6rem;
+      height: 4.6rem;
+      flex: 0 0 4.6rem;
+      max-width: 4.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 1.6rem 1.6rem 0;
+      padding: 0.8rem;
+      img {
+        @include fullSizeImg(contain);
+      }
+    }
+  }
+}

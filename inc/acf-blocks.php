@@ -155,6 +155,24 @@ function starter_acf_init_block_types()
                 ),
             ),
         );
+
+        // Tech Icons block
+        acf_register_block_type(
+            array(
+                'name'              => 'tech-icons',
+                'title'             => __('Tech Icons'),
+                'description'       => __('A block to display tech icons.'),
+                'render_template'   => 'block-templates/tech_icons_block.php',
+                'category'          => 'sensorz',
+                'icon'              => 'sensorz',
+                'keywords'          => array('tech icons', 'sensorz'),
+                'supports'          => array(
+                    'mode' => true,
+                    'anchor' => true,
+
+                ),
+            ),
+        );
     }
 }
 

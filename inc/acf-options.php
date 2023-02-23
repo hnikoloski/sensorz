@@ -35,3 +35,20 @@ if (function_exists('acf_add_options_page')) {
     //     'parent_slug'   => 'theme-general-settings',
     // ));
 }
+
+
+function dynamic_icon_selector_choices($field)
+{
+    $choices = array();
+    if (function_exists('get_field')) {
+        $tech_icons = get_field('tech_icons', 'option');
+        if (!empty($tech_icons)) {
+            foreach ($tech_icons as $tech_icon) {
+                $choices[$tech_icon['icon'] . '|'  . $tech_icon['shadow_color']]  = $tech_icon['name'];
+            }
+        }
+    }
+    $field['choices'] = $choices;
+    return $field;
+}
+add_filter('acf/load_field/name=icon_selector', 'dynamic_icon_selector_choices');
