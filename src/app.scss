@@ -4,3 +4,9 @@
 @import "./sass/layout/layout";
 @import "./sass/components/components";
 @import "./sass/pages/pages";
+.has-sensorz-gr1-gradient-gradient-background {
+  @include secondaryGradient();
+}
+.has-sensorz-gr2-gradient-gradient-background {
+  @include primaryGradient();
+}

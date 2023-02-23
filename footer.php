@@ -76,7 +76,7 @@
                 $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
                 $main_domain = $protocol . "://" . $_SERVER['HTTP_HOST'];
             ?>
-            <form action="<?php echo $main_domain; ?>/wp-json/sensorz/v1/contact">
+            <form action="<?php echo $main_domain; ?>/wp-json/sensorz/v1/contact" class="send-contact-form">
                 <div class="form-control">
                     <label for="name"><?php _e('Your Name', 'sensorz'); ?></label>
                     <input type="text" name="name" id="name" placeholder="<?php _e('Your Name', 'sensorz'); ?>" required>
@@ -91,6 +91,9 @@
                 </div>
                 <div class="form-control">
                     <button type="submit"><?php _e('Send', 'sensorz'); ?></button>
+                </div>
+                <div class="form-response">
+                    <p></p>
                 </div>
             </form>
         </div>

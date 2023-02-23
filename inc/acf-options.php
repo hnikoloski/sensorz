@@ -13,11 +13,6 @@ if (function_exists('acf_add_options_page')) {
         'redirect'      => false
     ));
 
-    acf_add_options_sub_page(array(
-        'page_title'    => 'Cta Sections',
-        'menu_title'    => 'Cta Sections',
-        'parent_slug'   => 'theme-general-settings',
-    ));
 
     acf_add_options_sub_page(array(
         'page_title'    => 'Partners',
@@ -25,17 +20,21 @@ if (function_exists('acf_add_options_page')) {
         'parent_slug'   => 'theme-general-settings',
     ));
 
-    // Footer
+    // Tech Icons
     acf_add_options_sub_page(array(
-        'page_title'    => 'Footer',
-        'menu_title'    => 'Footer',
+        'page_title'    => 'Tech Icons',
+        'menu_title'    => 'Tech Icons',
         'parent_slug'   => 'theme-general-settings',
     ));
 
+
     // Socials
-    acf_add_options_sub_page(array(
-        'page_title'    => 'Socials',
-        'menu_title'    => 'Socials',
-        'parent_slug'   => 'theme-general-settings',
-    ));
+    // acf_add_options_sub_page(array(
+    //     'page_title'    => 'Socials',
+    //     'menu_title'    => 'Socials',
+    //     'parent_slug'   => 'theme-general-settings',
+    // ));
 }
+
+
+// Create a hidden cpt called Tech Icons. It only has a title field.

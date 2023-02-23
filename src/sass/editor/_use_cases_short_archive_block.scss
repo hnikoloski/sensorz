@@ -1,13 +1,8 @@
 .sensorz-use-cases-short-archive-block {
-  padding: 0 36rem 10rem 36rem;
-  background: linear-gradient(
-    251.58deg,
-    rgba(247, 181, 0, 0.13) 2%,
-    rgba(255, 255, 255, 0) 48.07%,
-    rgba(223, 97, 120, 0.14) 95.11%
-  );
+  padding: 0 360px 100px 360px;
+  background: #eff0f5;
   @include for-tablet {
-    padding: 0 2rem 10rem 2rem;
+    padding: 0 20px 100px 20px;
   }
   > header {
     display: flex;
@@ -15,42 +10,55 @@
     align-items: stretch;
     align-content: center;
     justify-content: center;
-    margin-bottom: 8rem;
+    margin-bottom: 80px;
     @include for-tablet {
       flex-wrap: nowrap;
       overflow-x: auto;
       justify-content: flex-start;
-      padding-bottom: 3rem;
+      padding-bottom: 30px;
     }
     .section-title {
       opacity: 0.12;
-      padding-top: 3rem;
-      margin-right: 3rem;
+      padding-top: 3px;
+      margin-right: 3px;
     }
     .single-post-header {
-      flex: 0 0 15rem;
-      width: 15rem;
-      max-width: 15rem;
-      padding: 1.2rem 1.5rem 2.2rem 1.5rem;
+      flex: 0 0 150px;
+      width: 150px;
+      max-width: 150px;
+      padding: 12px 15px 22px 15px;
       background: #fff;
-      box-shadow: 0px 0.4rem 2rem rgba(0, 0, 0, 0.06);
+      box-shadow: 0px 0.4px 2px rgba(0, 0, 0, 0.06);
       height: inherit;
       position: relative;
       cursor: pointer;
-      &::before {
-        content: "";
+
+      &::after {
         position: absolute;
-        left: 0;
-        bottom: -2.4rem;
-        width: 100%;
-        background: url("../../assets/images/active-tab-bg.svg");
-        @include bg-props(100%, bottom, no-repeat);
-        z-index: 1;
+        content: "";
+        bottom: 0;
+        right: 0;
+        width: 0;
         height: 0;
+        border-style: solid;
+        border-color: transparent transparent #eff0f5 transparent;
+        border-width: 0;
+        transition: 0.3s;
+      }
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: transparent transparent transparent #eff0f5;
+        border-width: 0;
+        transition: 0.3s;
       }
       &:hover {
         @include primaryGradient();
-
         .icon {
           background: var(--hoverIconUrl);
           @include bg-props(contain, center, no-repeat);
@@ -66,34 +74,33 @@
           background: var(--hoverIconUrl);
           @include bg-props(contain, center, no-repeat);
         }
+        &::after {
+          border-width: 0 0 24px 72px;
+          opacity: 1;
+        }
+        &::before {
+          border-width: 24px 0 0 72px;
+          opacity: 1;
+        }
         h4 {
           color: #fff;
           font-weight: 700;
         }
-        &::before {
-          height: calc(100% + 2.4rem);
-        }
       }
       &:not(:last-of-type) {
-        margin-right: 2.8rem;
+        margin-right: 28px;
       }
       .icon {
-        height: 5rem;
+        height: 50px;
         width: auto;
-        margin: 0 auto 1.4rem auto;
+        margin: 0 auto 14px auto;
         background: var(--iconUrl);
         @include bg-props(contain, center, no-repeat);
-        transition: 0s;
-        position: relative;
-        z-index: 9;
       }
       h4 {
         text-align: center;
         color: $primary;
-        font-size: 1.8rem;
-        transition: 0s;
-        position: relative;
-        z-index: 9;
+        font-size: 18px;
       }
     }
   }

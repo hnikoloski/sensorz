@@ -208,3 +208,26 @@ if (file_exists(get_template_directory() . '/inc/acf-options.php')) {
 if (file_exists(get_template_directory() . '/inc/endpoints.php')) {
     require get_template_directory() . '/inc/endpoints.php';
 }
+
+
+function disable_async_img($attr)
+{
+    unset($attr['decoding']);
+    return $attr;
+}
+add_filter('wp_get_attachment_image_attributes', 'disable_async_img', 10, 2);
+
+
+// Add gradient colors to the editor
+add_theme_support('editor-gradient-presets', array(
+    array(
+        'name'     => __('gr1', 'sensorz'),
+        'gradient' => 'linear-gradient(281.18deg, #363AA5 -10.68%, #27124B 48.54%, #050732 88.19%)',
+        'slug'     => 'sensorz-gr1-gradient',
+    ),
+    array(
+        'name'     => __('gr2', 'sensorz'),
+        'gradient' => 'linear-gradient(105.23deg, #E5953F -9.92%, #D23F78 106.1%)',
+        'slug'     => 'sensorz-gr2-gradient',
+    ),
+));

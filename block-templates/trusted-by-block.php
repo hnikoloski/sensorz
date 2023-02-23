@@ -19,7 +19,7 @@ if (!empty($block['align'])) {
 }
 ?>
 
-<div <?= $anchor; ?>class="<?= esc_attr($class_name); ?>">
+<div <?= $anchor; ?> class="<?= esc_attr($class_name); ?>">
 
     <?php if (get_field('trusted_by_title')) : ?>
         <h2 class="section-title section-title-light text-uppercase"><?php the_field('trusted_by_title'); ?></h2>

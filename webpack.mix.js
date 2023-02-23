@@ -5,12 +5,16 @@ const CompressionWebpackPlugin = require("compression-webpack-plugin");
 mix
     .options({
         processCssUrls: false,
+        notifications: false
     })
     .js('src/app.js', 'js')
     .sass('src/app.scss', 'css')
     .sass('src/editor.scss', 'css')
     .setPublicPath('dist')
     .sourceMaps(true, 'source-map')
+
+
+
 
 
 mix.webpackConfig({

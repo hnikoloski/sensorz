@@ -20,7 +20,7 @@ if (!empty($block['align'])) {
 $postsPerPage = get_field('use_cases_short_archive_posts_per_page') ? get_field('use_cases_short_archive_posts_per_page') : -1;
 ?>
 
-<div <?= $anchor; ?>class="<?= esc_attr($class_name); ?>">
+<div <?= $anchor; ?> class="<?= esc_attr($class_name); ?>">
     <header>
         <?php if (get_field('use_cases_short_archive_title')) : ?>
             <h3 class="section-title section-title-primary text-uppercase"><?php the_field('use_cases_short_archive_title'); ?></h3>

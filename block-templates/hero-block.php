@@ -26,7 +26,7 @@ $heroDescription = get_field('hero_block_description') ?: '';
 
 ?>
 
-<div <?= $anchor; ?>class="<?= esc_attr($class_name); ?>">
+<div <?= $anchor; ?> class="<?= esc_attr($class_name); ?>">
     <div class="wrapper">
         <div class="content">
             <?php if ($heroTitle) : ?>

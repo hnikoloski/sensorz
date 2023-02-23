@@ -1,0 +1,35 @@
+.sensorz-timeline-block {
+  padding: 114px 25px;
+  background: #eff0f5;
+  .timeline {
+    text-align: center;
+    &-single {
+      max-width: 890px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      &:not(:last-of-type) {
+        margin-bottom: 45px;
+      }
+      &-number {
+        color: rgba(7, 8, 50, 0.06);
+        font-size: 100px;
+        line-height: 0.9;
+        font-weight: 700;
+      }
+      .container {
+        h3 {
+          color: $primary;
+          font-weight: 700;
+          font-size: 32px;
+          margin-bottom: 2px;
+        }
+        p {
+          line-height: 1.36;
+          color: $primary;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

@@ -197,9 +197,34 @@ footer.site-footer {
               background: #fff;
               color: $primary;
             }
+            &:disabled {
+              pointer-events: none;
+              cursor: not-allowed;
+            }
             @include for-tablet {
               margin: 0 auto;
             }
+          }
+        }
+        .form-response {
+          border: 0.2rem solid #fff;
+          padding: 1rem 2rem;
+          display: none;
+          &.error {
+            border-color: #ff5656;
+            p {
+              color: #ff5656;
+            }
+          }
+          &.success {
+            border-color: #4aa380;
+            p {
+              color: #4aa380;
+            }
+          }
+          p {
+            text-align: center;
+            font-size: 2rem;
           }
         }
       }

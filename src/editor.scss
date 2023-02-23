@@ -2,7 +2,8 @@
 @import "./sass/helpers/variables";
 @import "./sass/editor/hero_block";
 @import "./sass/editor/trusted_by_block";
-
+@import "./sass/editor/use_cases_short_archive_block";
+@import "./sass/editor/timeline_block";
 .dashicons {
   &-sensorz {
     position: relative;
@@ -21,4 +22,10 @@
       background-position: center;
     }
   }
+}
+.has-sensorz-gr1-gradient-gradient-background {
+  @include secondaryGradient();
+}
+.has-sensorz-gr2-gradient-gradient-background {
+  @include primaryGradient();
 }

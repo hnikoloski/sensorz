@@ -41,6 +41,8 @@ function starter_acf_init_block_types()
                 'keywords'          => array('hero', 'sensorz'),
                 'supports'          => array(
                     'mode' => true,
+                    'anchor' => true,
+
                 ),
             ),
         );
@@ -57,6 +59,8 @@ function starter_acf_init_block_types()
                 'keywords'          => array('trusted by', 'sensorz'),
                 'supports'          => array(
                     'mode' => true,
+                    'anchor' => true,
+
                 ),
             ),
         );
@@ -71,7 +75,6 @@ function starter_acf_init_block_types()
                 'category'          => 'sensorz',
                 'icon'              => 'sensorz',
                 'keywords'          => array('excerpt content', 'sensorz'),
-                'mode'            => 'preview',
                 'supports'        => [
                     'align'            => false,
                     'anchor'        => true,
@@ -91,13 +94,65 @@ function starter_acf_init_block_types()
                 'category'          => 'sensorz',
                 'icon'              => 'sensorz',
                 'keywords'          => array('use cases short archive', 'sensorz'),
-                'mode'            => 'preview',
-                'supports'        => [
-                    'align'            => false,
-                    'anchor'        => true,
-                    'customClassName'    => true,
-                    'jsx'             => true,
-                ]
+                'supports'          => array(
+                    'mode' => true,
+                    'anchor' => true,
+
+                ),
+            ),
+        );
+
+        // Fancy image gallery block
+        acf_register_block_type(
+            array(
+                'name'              => 'fancy-image-gallery',
+                'title'             => __('Fancy Image Gallery'),
+                'description'       => __('A block to display fancy image gallery.'),
+                'render_template'   => 'block-templates/fancy_image_gallery_block.php',
+                'category'          => 'sensorz',
+                'icon'              => 'sensorz',
+                'keywords'          => array('fancy image gallery', 'sensorz'),
+                'supports'          => array(
+                    'mode' => true,
+                    'anchor' => true,
+
+                ),
+            ),
+        );
+
+        // Timeline block
+        acf_register_block_type(
+            array(
+                'name'              => 'timeline',
+                'title'             => __('Timeline'),
+                'description'       => __('A block to display timeline.'),
+                'render_template'   => 'block-templates/timeline_block.php',
+                'category'          => 'sensorz',
+                'icon'              => 'sensorz',
+                'keywords'          => array('timeline', 'sensorz'),
+                'supports'          => array(
+                    'mode' => true,
+                    'anchor' => true,
+
+                ),
+            ),
+        );
+
+        // Columns 1:2 block
+        acf_register_block_type(
+            array(
+                'name'              => 'columns-1-2',
+                'title'             => __('Columns 1:2'),
+                'description'       => __('A block to display columns 1:2.'),
+                'render_template'   => 'block-templates/columns_1_2_block.php',
+                'category'          => 'sensorz',
+                'icon'              => 'sensorz',
+                'keywords'          => array('columns 1:2', 'sensorz'),
+                'supports'          => array(
+                    'mode' => true,
+                    'anchor' => true,
+
+                ),
             ),
         );
     }

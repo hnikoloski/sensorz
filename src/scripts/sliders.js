@@ -10,30 +10,25 @@ jQuery(document).ready(function ($) {
 
 
         const trustedBySlider = new Swiper('.sensorz-trusted-by-block .swiper', {
-            modules: [Autoplay],
-            autoplay: true,
-            speed: 1000,
-            delay: 1,
-            slidesPerView: 9,
-            loop: true,
-            loopedSlides: 9,
-            slidesPerGroup: 9,
-            spaceBetween: convertPxToRem(45),
-            preloadImages: true,
-            disableOnInteraction: false,
-            breakpoints: {
-                320: {
-                    slidesPerView: 2.5,
-                    spaceBetween: convertPxToRem(45),
-                },
-                768: {
-                    slidesPerView: 9,
-                    spaceBetween: convertPxToRem(45),
-                    disableOnInteraction: false,
-
-                },
-
+            init: function () {
+                const images = this.el.querySelectorAll('img');
+                for (let i = 0; i < images.length; i++) {
+                    images[i].removeAttribute('decoding');
+                }
             },
+            modules: [Autoplay],
+            autoplay: {
+                delay: 1,
+            },
+            loop: true,
+            slidesPerView: 5,
+            spaceBetween: convertPxToRem(30),
+            speed: 3500,
+            disableOnInteraction: false,
+            allowTouchMove: false,
+
+
+
         });
     }
 

@@ -2,41 +2,89 @@
 
 // Register Endpoints
 add_action('rest_api_init', function () {
-    register_rest_route('sensorz/v1', '/use-cases-short', array(
-        'methods' => 'GET',
-        'callback' => 'get_use_cases_short',
+    register_rest_route('sensorz/v1', '/contact', array(
+        'methods' => 'POST',
+        'callback' =>  'send_contact_form',
     ));
 });
 
-function get_use_cases_short($request)
+function send_contact_form($request)
 {
-    $postsPerPage = $request->get_param('posts_per_page') ? $request->get_param('posts_per_page') : -1;
-    $args = array(
-        'post_type' => 'use_cases',
-        'posts_per_page' => $postsPerPage,
-        'orderby' => 'date',
-        'order' => 'DESC',
-    );
-    $use_cases = new WP_Query($args);
-    $posts = array();
-    if ($use_cases->have_posts()) {
-        while ($use_cases->have_posts()) {
-            $use_cases->the_post();
-            $formatedExcerptBlock = '';
-            // Get the content of the post but just the excerpt block
-            $blocks = parse_blocks(get_the_content());
-            foreach ($blocks as $block) {
-                if ($block['blockName'] === 'acf/excerpt-content') {
-                    $formatedExcerptBlock = $block['innerBlocks'];
-                }
-            }
-            $posts[] = array(
-                'id' => get_the_ID(),
-                'title' => get_the_title(),
-                'excerpt_content' => $formatedExcerptBlock
-            );
-        }
+    $name = $request->get_param('name');
+    $email = $request->get_param('email');
+    $message = $request->get_param('message');
+
+    // Check if name is empty
+    if (empty($name)) {
+        $err_msg = array(
+            'error' => true,
+            'message' => __('Name is required', 'sensorz'),
+        );
+        return $err_msg;
     }
-    wp_reset_postdata();
-    return $posts;
+
+    // Check if email is empty
+    if (empty($email)) {
+        $err_msg = array(
+            'error' => true,
+            'message' => __('Email is required', 'sensorz')
+        );
+        return $err_msg;
+    }
+    // Check if email is valid
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $err_msg = array(
+            'error' => true,
+            'message' => __('Email is invalid', 'sensorz')
+        );
+        return $err_msg;
+    }
+    // Check if message is empty
+    if (empty($message)) {
+        $err_msg = array(
+            'error' => true,
+            'message' => __('Message is required', 'sensorz')
+        );
+        return $err_msg;
+    }
+
+
+    // Send email
+    $adminEmail = get_option('admin_email');
+    $to = get_field('contact_form_email', 'option') ? get_field('contact_form_email', 'option') : $adminEmail;
+    $subject = 'Contact Form Submission';
+    $headers = array('Content-Type: text/html; charset=UTF-8');
+    $body = "<table>
+                <tr>
+                    <td>Name</td>
+                    <td>$name</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>$email</td>
+                </tr>
+                <tr>
+                    <td>Message</td>
+                    <td>$message</td>
+                </tr>
+            </table>";
+
+
+
+
+    $sent = wp_mail($to, $subject, $body, $headers);
+
+    if ($sent) {
+        $success_msg = array(
+            'error' => false,
+            'message' => __('Message sent successfully', 'sensorz')
+        );
+        return $success_msg;
+    } else {
+        $err_msg = array(
+            'error' => true,
+            'message' =>  __('Message could not be sent', 'sensorz')
+        );
+        return $err_msg;
+    }
 }
