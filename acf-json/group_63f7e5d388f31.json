@@ -17,12 +17,12 @@
                 "id": ""
             },
             "choices": {
-                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/Group-485.svg": "4g",
-                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/Group-486.svg": "5g",
-                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/image-35.svg": "LoRa",
-                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/image-45.svg": "Zigbee",
-                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/image-34.svg": "wi-fi",
-                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/Vector.svg": "Bluetooth"
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/Group-485.svg|rgba(72,216,227,0.26)": "4g",
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/Group-486.svg|rgba(223,97,120,0.24)": "5g",
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/image-35.svg|rgba(227,139,70,0.3)": "LoRa",
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/image-45.svg|rgba(133,123,183,0.24)": "Zigbee",
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/image-34.svg|rgba(133,123,183,0.24)": "wi-fi",
+                "https:\/\/sensorz.test.dev\/wp-content\/uploads\/2023\/02\/Vector.svg|rgba(72, 216, 227, 0.26)": "Bluetooth"
             },
             "default_value": [],
             "return_format": "array",
@@ -39,6 +39,13 @@
                 "operator": "==",
                 "value": "acf\/tech-icons"
             }
+        ],
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/video-infographic"
+            }
         ]
     ],
     "menu_order": 0,
@@ -50,5 +57,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1677191469
+    "modified": 1677195989
 }

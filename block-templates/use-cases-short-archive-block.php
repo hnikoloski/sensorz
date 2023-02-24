@@ -81,6 +81,10 @@ $postsPerPage = get_field('use_cases_short_archive_posts_per_page') ? get_field(
                                             echo 'active';
                                         } ?>" data-post-id="<?php echo get_the_ID(); ?>">
                     <?php
+                    $thePostTitle = get_the_title();
+                    ?>
+                    <h3 class="post_title text-center"><?php echo $thePostTitle; ?></h3>
+                    <?php
                     $blocks = parse_blocks(get_the_content());
                     $formatedExcerptBlock = array();
 
@@ -92,6 +96,7 @@ $postsPerPage = get_field('use_cases_short_archive_posts_per_page') ? get_field(
                     }
                     ?>
                     <div class="excerpt-content single-post-styles">
+
                         <?php
                         if (is_array($formatedExcerptBlock) && !empty($formatedExcerptBlock)) {
                             // Only loop through $formatedExcerptBlock if it is a non-empty array

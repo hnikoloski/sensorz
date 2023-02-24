@@ -173,6 +173,24 @@ function starter_acf_init_block_types()
                 ),
             ),
         );
+
+        // Video Infographic block
+        acf_register_block_type(
+            array(
+                'name'              => 'video-infographic',
+                'title'             => __('Video Infographic'),
+                'description'       => __('A block to display video infographic.'),
+                'render_template'   => 'block-templates/video_infographic_block.php',
+                'category'          => 'sensorz',
+                'icon'              => 'sensorz',
+                'keywords'          => array('video infographic', 'sensorz'),
+                'supports'          => array(
+                    'mode' => true,
+                    'anchor' => true,
+
+                ),
+            ),
+        );
     }
 }
 

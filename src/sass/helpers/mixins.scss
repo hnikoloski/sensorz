@@ -358,4 +358,16 @@
   background-clip: text;
   text-fill-color: transparent;
 }
+@mixin textColorSecondary() {
+  background: linear-gradient(
+    281.23deg,
+    #363aa5 -10.68%,
+    #27124b 48.54%,
+    #050732 88.19%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
 /* ====== / MIXINS ====== */

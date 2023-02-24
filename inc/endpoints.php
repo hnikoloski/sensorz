@@ -5,6 +5,7 @@ add_action('rest_api_init', function () {
     register_rest_route('sensorz/v1', '/contact', array(
         'methods' => 'POST',
         'callback' =>  'send_contact_form',
+        'permission_callback' => '__return_true',
     ));
 });
 
@@ -54,6 +55,11 @@ function send_contact_form($request)
     $to = get_field('contact_form_email', 'option') ? get_field('contact_form_email', 'option') : $adminEmail;
     $subject = 'Contact Form Submission';
     $headers = array('Content-Type: text/html; charset=UTF-8');
+    // Set the from email address
+    $headers[] = 'From: ' . $name . ' <' . $email . '>';
+    // Set the reply to email address
+    $headers[] = 'Reply-To: ' . $name . ' <' . $email . '>';
+
     $body = "<table>
                 <tr>
                     <td>Name</td>
