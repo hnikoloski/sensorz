@@ -85,16 +85,18 @@
           width: 100%;
           height: 100%;
           background-color: #fff; /* set the background color to light gray */
-          // position: relative;
-          // &::before {
-          //   content: "";
-          //   position: absolute;
-          //   left: 0;
-          //   top: 0;
-          //   width: 100%;
-          //   height: 100%;
-          //   pointer-events: none;
-          // }
+          position: relative;
+          &::before {
+            background: no-repeat;
+            border: 2px solid #fff;
+            content: "";
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+          }
         }
       }
       &-number {
