@@ -29,7 +29,7 @@ if (!$logo) {
 }
 
 $videoSrc = get_field('video_file');
-$videoPoster = get_field('video_poster') ? get_field('video_poster') : 'https://via.placeholder.com/1920x1080';
+$videoPoster = get_field('video_poster') ? get_field('video_poster') : get_template_directory_uri() . '/assets/images/info-video-poster.png';
 ?>
 
 <div <?= $anchor; ?> class="<?= esc_attr($class_name); ?>">
