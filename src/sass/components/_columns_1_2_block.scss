@@ -1,6 +1,10 @@
 .sensorz-columns-1-2-block {
   padding: 10rem 34.1rem;
   margin-bottom: 10rem;
+  @include for-tablet {
+    padding: 10rem 4.6rem;
+    margin-bottom: 0;
+  }
   .container {
     display: flex;
     flex-wrap: wrap;
@@ -13,9 +17,20 @@
       align-content: space-around;
       align-items: stretch;
       justify-content: flex-start;
+      @include for-tablet {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0;
+        margin-bottom: 3.2rem;
+        display: block;
+      }
       &:last-of-type {
         flex: 0 0 40%;
         max-width: 40%;
+        @include for-tablet {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
       }
       .col {
         @include borderRadius(2.2rem);
@@ -24,15 +39,29 @@
         text-align: center;
         width: 100%;
         flex: 0 0 100%;
+
         .logo-wrapper {
           width: 16.6rem;
           height: 6.2rem;
+          @include for-tablet {
+            width: 8.5rem;
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+          }
         }
         h3 {
           font-size: 2.2rem;
+          @include for-tablet {
+            font-size: 1.8rem;
+            text-align: center;
+          }
         }
         p {
           font-size: 1.8rem;
+          @include for-tablet {
+            font-size: 1.8rem;
+          }
         }
         .img-wrapper {
           width: 31.5rem;
@@ -40,6 +69,11 @@
           margin-top: 3.8rem;
           margin-left: auto;
           margin-right: auto;
+          @include for-tablet {
+            width: 100%;
+            height: auto;
+            margin-top: 3.2rem;
+          }
         }
         &-1 {
           @include secondaryGradient();
@@ -53,16 +87,29 @@
             font-weight: 700;
             line-height: 1.36;
             text-align: left;
+            @include for-phone {
+              font-size: 3.2rem;
+              text-align: center;
+              margin-bottom: 1.6rem;
+            }
           }
           p {
             font-size: 2.2rem;
             text-align: left;
+            @include for-phone {
+              text-align: center;
+            }
           }
           .img-wrapper {
             margin-left: auto;
             margin-top: auto;
             width: 53.7rem;
             height: 33.2rem;
+            @include for-phone {
+              width: 100%;
+              height: auto;
+              margin-top: 3.2rem;
+            }
           }
         }
         &-2 {

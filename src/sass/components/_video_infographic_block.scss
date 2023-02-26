@@ -1,9 +1,17 @@
 .sensorz-video-infographic-block {
   padding: 5.5rem;
+  @include for-tablet {
+    padding: 2.4rem;
+  }
   .logo-wrapper {
     width: 14rem;
     height: 5.2rem;
     margin: 0 auto 1.4rem auto;
+    @include for-tablet {
+      width: 13rem;
+      height: 3.4rem;
+      margin-bottom: 0.8rem;
+    }
   }
   .block-title {
     @include textColorSecondary();
@@ -13,6 +21,10 @@
     margin-bottom: 1.7rem;
     font-weight: 700;
     text-align: center;
+    @include for-tablet {
+      font-size: 3.2rem;
+      margin-bottom: 3rem;
+    }
   }
   .video-js-wrapper {
     width: 140.3rem;
@@ -21,18 +33,30 @@
     margin-right: auto;
     position: relative;
     background: transparent;
+    @include for-tablet {
+      width: 100%;
+      height: 13.8rem;
+      margin: 0;
+    }
+    .video-js {
+      background-color: #fff;
+    }
     #video-infographic {
       background: transparent;
       position: relative;
       &::before {
         content: "";
+        content: "";
         position: absolute;
         right: 0;
         top: 0;
-        width: 2px;
+        // width: 2px;
         height: 100%;
-        background: #fff;
+        // background: #fff;
         z-index: 999;
+        width: 100%;
+        background: no-repeat;
+        border: 2px solid #fff;
       }
     }
     video {

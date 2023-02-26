@@ -51,7 +51,8 @@
         text-transform: uppercase;
         margin-bottom: 2.3rem;
         @include for-tablet {
-          font-size: 6.4rem;
+          font-size: 3.7rem;
+          text-align: center;
         }
       }
       p {
@@ -59,6 +60,9 @@
         font-weight: 600;
         font-size: 2.2rem;
         line-height: 1.36;
+        @include for-tablet {
+          font-size: 2.4rem;
+        }
       }
     }
     .video-wrapper {
@@ -66,8 +70,8 @@
       max-width: 62.1rem;
       width: 100%;
       @include for-tablet {
-        flex: 0 0 100%;
-        max-width: 85%;
+        flex: 0 0 26.6rem;
+        max-width: 26.6rem;
         margin: 5rem auto 10rem auto;
       }
       .deco-wrapper {
@@ -107,11 +111,19 @@
             rgba(223, 97, 120, 0) 73.66%
           );
           @include borderRadius(2.3rem);
+          @include for-tablet {
+            height: 1.245rem;
+          }
           &:nth-of-type(1) {
             width: 33.2rem;
             top: 5.2rem;
             left: -18rem;
             @include rotate(-180);
+            @include for-tablet {
+              width: 14.249rem;
+              left: -8.4rem;
+              top: 2.4rem;
+            }
           }
           &:nth-of-type(2) {
             background: linear-gradient(
@@ -126,11 +138,23 @@
             left: -13rem;
             @include rotate(0);
             opacity: 0.44;
+            @include for-tablet {
+              height: 1.631rem;
+              width: 9.488rem;
+              top: 3.8rem;
+              left: -5.7rem;
+            }
           }
           &:nth-of-type(3) {
             bottom: -1.5rem;
             right: -13rem;
             width: 33.2rem;
+            @include for-tablet {
+              width: 14.2rem;
+              height: 1.245rem;
+              bottom: -0.515rem;
+              right: -3.218rem;
+            }
           }
         }
       }
@@ -140,6 +164,9 @@
         padding-top: 0;
         width: 100%;
         height: 31.6rem;
+        @include for-tablet {
+          height: 13.7rem;
+        }
         * {
           background: none;
           background-color: transparent;
