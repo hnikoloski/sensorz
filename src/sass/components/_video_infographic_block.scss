@@ -23,6 +23,17 @@
     background: transparent;
     #video-infographic {
       background: transparent;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background: #fff;
+        z-index: 999;
+      }
     }
     video {
       width: 100%;
