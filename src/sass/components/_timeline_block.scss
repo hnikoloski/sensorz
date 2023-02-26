@@ -1,5 +1,5 @@
 .sensorz-timeline-block {
-  padding: 21.4rem 2.5rem;
+  padding: 21.4rem 2.5rem 11.4rem 2.5rem;
 
   @include for-tablet {
     padding: 5.4rem 2rem;
@@ -45,12 +45,33 @@
         align-items: flex-start;
         position: relative;
       }
-      .image-wrapper {
-        width: var(--deco-img-width);
-        // height: var(--deco-img-height);
-        height: auto;
-        flex: 0 0 var(--deco-img-width);
-        max-width: calc(100% - 58rem - 1.5rem);
+      // .image-wrapper {
+      //   width: var(--deco-img-width);
+      //   // height: var(--deco-img-height);
+      //   height: auto;
+      //   flex: 0 0 var(--deco-img-width);
+      //   max-width: calc(100% - 58rem - 1.5rem);
+      // }
+      .video-wrapper {
+        flex: 0 0 46rem;
+        max-width: 46rem;
+        width: 46rem;
+        height: 46rem;
+        .video-js {
+          width: 100%;
+          height: 100%;
+          background-color: #fff; /* set the background color to light gray */
+          // position: relative;
+          // &::before {
+          //   content: "";
+          //   position: absolute;
+          //   left: 0;
+          //   top: 0;
+          //   width: 100%;
+          //   height: 100%;
+          //   pointer-events: none;
+          // }
+        }
       }
       &-number {
         color: rgba(7, 8, 50, 0.06);

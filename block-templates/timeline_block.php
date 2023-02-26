@@ -27,19 +27,15 @@ if (!empty($block['align'])) {
         <div class="timeline">
             <?php while (have_rows('timeline')) : the_row();
                 $counter++;
-                $decoImage = get_sub_field('deco_image');
-                $decoImageWidth = get_sub_field('deco_image_width') ? get_sub_field('deco_image_width') : 100;
-                $decoImageHeight = get_sub_field('deco_image_height') ? get_sub_field('deco_image_height') : 100;
+                $decoUrl = get_sub_field('deco_url');
+                $decoPosterUrl = get_sub_field('deco_poster_url');
                 $orderPos = 1;
                 if ($counter % 2 == 0) {
                     $orderPos = 2;
                 }
 
             ?>
-                <!-- 
-                style="--deco-img-width: <?php echo $decoImageWidth / 10; ?>rem; --deco-img-height: <?php echo $decoImageHeight / 10; ?>rem; --deco-img-url:url(<?php echo $decoImage['url']; ?>);"
 
-             -->
                 <div class="timeline-single">
                     <div class="col">
                         <span class="timeline-single-number"><?php echo $counter; ?></span>
@@ -54,11 +50,11 @@ if (!empty($block['align'])) {
                             <?php endif; ?>
                         </div>
                     </div>
-                    <?php if ($decoImage) : ?>
-                        <div class="image-wrapper" style="--deco-img-width: <?php echo $decoImageWidth / 10; ?>rem; --deco-img-height: <?php echo $decoImageHeight / 10; ?>rem;">
-                            <?php
-                            echo wp_get_attachment_image($decoImage['id'], array($decoImageWidth, $decoImageHeight), "", array("class" => "full-size-img full-size-img-contain"));
-                            ?>
+                    <?php if ($decoUrl) : ?>
+                        <div class="video-wrapper">
+                            <video autoplay muted loop playsinline class="video-js vjs-default-skin" data-setup='{"controls": false, "preload": "auto"}' poster="<?php echo $decoPosterUrl; ?>">
+                                <source src="<?php echo $decoUrl; ?>" type="video/mp4">
+                            </video>
                         </div>
                     <?php endif; ?>
 
