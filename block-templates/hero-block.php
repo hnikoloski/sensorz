@@ -40,7 +40,7 @@ $heroDescription = get_field('hero_block_description') ?: '';
                     <div class="deco-line"></div>
                     <div class="deco-line"></div>
                     <div class="deco-line"></div>
-                    <video autoplay muted loop playsinline poster="<?php echo $videoPoster; ?>" class="video-js vjs-default-skin vjs-big-play-centered" id="hero-video">
+                    <video autoplay muted loop playsinline poster="<?php echo $videoPoster; ?>" class="video-js vjs-default-skin" id="hero-video">
                         <source src="<?php echo $videoUrl; ?>" type="video/mp4">
                     </video>
                 </div>

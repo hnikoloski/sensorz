@@ -118,6 +118,14 @@
         }
         &-3 {
           background: #555de0;
+          background: linear-gradient(
+            140.03deg,
+            #f0f4ff 0.42%,
+            #ccd9ff 101.21%
+          );
+          h3 {
+            color: #070832;
+          }
         }
       }
     }
