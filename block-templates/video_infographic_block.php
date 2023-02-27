@@ -39,24 +39,25 @@ $videoPoster = get_field('video_poster') ? get_field('video_poster') : get_templ
     <?php if ($blockTitle) : ?>
         <h2 class="block-title"><?php echo $blockTitle; ?></h2>
     <?php endif; ?>
-    <div class="sensorz-tech-icons-block">
-        <ul class="icons">
-            <?php
-            if ($checkBoxes) :
+    <?php
+    if ($checkBoxes) : ?>
+        <div class="sensorz-tech-icons-block">
+            <ul class="icons">
+                <?php
                 foreach ($checkBoxes as $checkBox) :
                     $value = $checkBox['value'];
                     $iconUrl = explode('|', $value)[0];
                     $shadowColor = explode('|', $value)[1];
                     $title = $checkBox['label'];
-            ?>
+                ?>
                     <li style="--shadow-color: <?php echo $shadowColor; ?>">
                         <img src="<?php echo $iconUrl; ?>" alt="<?php echo $title; ?>" />
                     </li>
                 <?php endforeach; ?>
-            <?php endif; ?>
-        </ul>
+            </ul>
 
-    </div>
+        </div>
+    <?php endif; ?>
     <div class="video-js-wrapper">
         <video autoplay muted loop playsinline poster="<?php echo $videoPoster; ?>" class="video-js vjs-default-skin" id="video-infographic">
             <source src="<?php echo $videoSrc; ?>" type="video/mp4" />

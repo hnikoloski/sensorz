@@ -1,12 +1,12 @@
 jQuery(document).ready(function ($) {
     // $("#page").css("padding-top", $("#masthead").outerHeight());
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 0) {
-            $('#masthead').addClass('sticky');
-        } else {
-            $('#masthead').removeClass('sticky');
-        }
-    });
+    // $(window).scroll(function () {
+    //     if ($(this).scrollTop() > 0) {
+    //         $('#masthead').addClass('sticky');
+    //     } else {
+    //         $('#masthead').removeClass('sticky');
+    //     }
+    // });
 
 
     if ($('#masthead li.btn').length) {

@@ -33,6 +33,7 @@ $postsPerPage = get_field('use_cases_short_archive_posts_per_page') ? get_field(
             'posts_per_page' => $postsPerPage,
             'orderby' => 'date',
             'order' => 'DESC',
+            'post_status' => 'publish',
         );
         $use_cases = new WP_Query($args);
 
@@ -69,6 +70,7 @@ $postsPerPage = get_field('use_cases_short_archive_posts_per_page') ? get_field(
             'posts_per_page' => $postsPerPage,
             'orderby' => 'date',
             'order' => 'DESC',
+            'post_status' => 'publish',
         );
         $use_cases = new WP_Query($args);
 

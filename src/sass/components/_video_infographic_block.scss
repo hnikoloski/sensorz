@@ -27,8 +27,9 @@
     }
   }
   .video-js-wrapper {
-    width: 140.3rem;
-    height: 48.9rem;
+    width: 100%;
+    height: 63.2rem;
+    padding: 0 6rem;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -44,6 +45,7 @@
     #video-infographic {
       background: transparent;
       position: relative;
+      height: 63.2rem;
       &::before {
         content: "";
         content: "";
@@ -56,12 +58,12 @@
         z-index: 999;
         width: 100%;
         background: no-repeat;
-        border: 2px solid #fff;
+        border: 0.5rem solid #fff;
       }
     }
     video {
       width: 100%;
-      height: 100%;
+      height: 63.2rem;
       background-color: #fff; /* set the background color to light gray */
     }
   }

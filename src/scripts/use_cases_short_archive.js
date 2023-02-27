@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
     if ($('.sensorz-use-cases-short-archive-block').length) {
         $('.sensorz-use-cases-short-archive-block .posts-container .single-post:first-of-type').show();
-        $('.sensorz-use-cases-short-archive-block .single-post-header').on('click', function () {
+        $('.sensorz-use-cases-short-archive-block .single-post-header').on('mouseenter', function () {
             if ($(this).hasClass('active')) {
                 return;
             }
