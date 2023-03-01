@@ -63,6 +63,7 @@
       flex-wrap: wrap;
       flex-direction: column;
       box-shadow: 0 -0.3rem 0.6rem rgba(0, 0, 0, 0.16);
+      bottom: 0;
       &.active {
         right: 0;
       }
@@ -130,6 +131,7 @@
     }
     @include for-tablet {
       display: flex;
+      z-index: 9999;
       &.active {
         span {
           &:nth-of-type(1) {

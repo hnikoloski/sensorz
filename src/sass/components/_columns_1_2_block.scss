@@ -113,7 +113,11 @@
           }
         }
         &-2 {
-          @include primaryGradient();
+          background: linear-gradient(
+            105.23deg,
+            #e53f9d -9.92%,
+            #d23f78 106.1%
+          );
           margin-bottom: 1.6rem;
         }
         &-3 {

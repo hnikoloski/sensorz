@@ -21,11 +21,23 @@
       overflow-x: auto;
       justify-content: flex-start;
       padding-bottom: 3rem;
+      margin-bottom: 0;
+      padding-top: 3rem;
     }
     .section-title {
       opacity: 0.12;
       padding-top: 3rem;
       margin-right: 3rem;
+      @include for-tablet {
+        opacity: 1;
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+        padding-top: 0;
+        br {
+          display: none;
+        }
+      }
     }
     .single-post-header {
       flex: 0 0 15rem;
@@ -101,12 +113,54 @@
     .single-post {
       display: none;
       transition: 0s;
+      @include for-tablet {
+        display: block;
+        background: #fff;
+        padding: 2.2rem;
+        background: #ffffff;
+        box-shadow: 0px 0px 2rem rgba(85, 89, 224, 0.2);
+        @include borderRadius(0.8rem);
+        transition: 0s;
+      }
       .post_title {
         @include textColorSecondary();
         font-size: 3.2rem;
         line-height: 1.375;
         font-weight: 700;
         margin-bottom: 3.2rem;
+        @include for-tablet {
+          text-align: left;
+          margin-top: -2.2rem;
+          margin-left: -2.2rem;
+          margin-right: -2.2rem;
+          padding: 2.2rem 5.8rem 2.2rem 2.2rem;
+          width: calc(100% + 4.4rem);
+          position: relative;
+          @include borderRadius(0.8rem);
+          &::after {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 1.3rem 1rem 0 1rem;
+            border-color: #2c1f66 transparent transparent transparent;
+            @include ver-center();
+            right: 2.8rem;
+            transition: 0.6s;
+          }
+          &.active {
+            @include primaryGradient();
+            color: #fff;
+            -webkit-background-clip: inherit;
+            -webkit-text-fill-color: #fff;
+            &::after {
+              border-width: 0 1rem 1.3rem 1rem;
+              border-color: transparent transparent #2c1f66 transparent;
+              transform-origin: 0 0.3rem;
+            }
+          }
+        }
       }
     }
   }

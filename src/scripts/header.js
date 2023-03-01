@@ -31,8 +31,17 @@ jQuery(document).ready(function ($) {
 
     // if on mobile
     if ($(window).width() <= 768) {
-        $('#masthead .menu').css('height', 'calc(100vh - ' + $('#masthead').outerHeight() + 'px)');
-        $('#masthead .menu').css('top', $('#masthead').outerHeight());
+        // $('#masthead .menu').css('height', 'calc(100vh - ' + $('#masthead').outerHeight() + 'px)');
+        // $('#masthead .menu').css('top', $('#masthead').outerHeight());
+
+        // If #mobile-trigger is active and user clicks on a link in the menu
+        $('#masthead .menu-item a').on('click', function () {
+            if ($('#mobile-trigger').hasClass('active')) {
+                $('#mobile-trigger').removeClass('active');
+                $('body').removeClass('overflow-hidden');
+                $('#masthead .menu').removeClass('active');
+            }
+        });
     }
 
     $('#mobile-trigger').on('click', function () {
@@ -40,4 +49,5 @@ jQuery(document).ready(function ($) {
         $('body').toggleClass('overflow-hidden');
         $('#masthead .menu').toggleClass('active');
     });
+
 });

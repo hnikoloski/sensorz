@@ -15,7 +15,7 @@
             <?php endif; ?>
             <?php if ($socialEmail) : ?>
                 <p><?php _e('Send us a message', 'sensorz'); ?></p>
-                <a href="mailto:<?php echo $socialEmail; ?>"><?php echo $socialEmail; ?></a>
+                <!-- <a href="mailto:<?php echo $socialEmail; ?>"><?php echo $socialEmail; ?></a> -->
 
                 <ul class="socials">
                     <?php if ($socialTwitter) : ?>
@@ -65,6 +65,13 @@
                                     <?php _e('LinkedIn', 'sensorz'); ?>
                                 </span>
                                 <i class="linkedin"></i>
+                            </a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($socialEmail) : ?>
+                        <li class="inline-icon">
+                            <a href="mailto:<?php echo $socialEmail; ?>" target="_blank" title="<?php _e('Email', 'sensorz'); ?>" class="d-flex justify-content-center align-items-center">
+                                <i class="email"></i> <span> <?php echo $socialEmail; ?></span>
                             </a>
                         </li>
                     <?php endif; ?>
