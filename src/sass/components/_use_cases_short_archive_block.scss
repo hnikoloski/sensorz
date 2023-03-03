@@ -113,6 +113,9 @@
     .single-post {
       display: none;
       transition: 0s;
+      * {
+        transition: 0s;
+      }
       @include for-tablet {
         display: block;
         background: #fff;
@@ -121,6 +124,10 @@
         box-shadow: 0px 0px 2rem rgba(85, 89, 224, 0.2);
         @include borderRadius(0.8rem);
         transition: 0s;
+        margin-bottom: 2.1rem;
+        .excerpt-content {
+          display: none;
+        }
       }
       .post_title {
         @include textColorSecondary();
@@ -133,10 +140,14 @@
           margin-top: -2.2rem;
           margin-left: -2.2rem;
           margin-right: -2.2rem;
+          margin-bottom: -2.2rem;
           padding: 2.2rem 5.8rem 2.2rem 2.2rem;
           width: calc(100% + 4.4rem);
           position: relative;
           @include borderRadius(0.8rem);
+          transition: 0.6s;
+          font-size: 1.8rem;
+
           &::after {
             position: absolute;
             content: "";
@@ -154,6 +165,7 @@
             color: #fff;
             -webkit-background-clip: inherit;
             -webkit-text-fill-color: #fff;
+            margin-bottom: 2.2rem;
             &::after {
               border-width: 0 1rem 1.3rem 1rem;
               border-color: transparent transparent #2c1f66 transparent;

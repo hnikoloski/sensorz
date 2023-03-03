@@ -1,7 +1,7 @@
 .sensorz-video-infographic-block {
   padding: 5.5rem;
   @include for-tablet {
-    padding: 2.4rem;
+    padding: 2.4rem 0;
   }
   .logo-wrapper {
     width: 14rem;
@@ -38,6 +38,7 @@
       width: 100%;
       height: 13.8rem;
       margin: 0;
+      padding: 0;
     }
     .video-js {
       background-color: #fff;
@@ -46,6 +47,11 @@
       background: transparent;
       position: relative;
       height: 63.2rem;
+      @include for-tablet {
+        width: 100%;
+        height: 13.8rem;
+        margin: 0;
+      }
       &::before {
         content: "";
         content: "";
@@ -65,6 +71,10 @@
       width: 100%;
       height: 63.2rem;
       background-color: #fff; /* set the background color to light gray */
+      @include for-tablet {
+        width: 100%;
+        height: 13.8rem;
+      }
     }
   }
 }

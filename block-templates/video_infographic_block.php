@@ -32,8 +32,8 @@ $videoSrc = get_field('video_file');
 $videoPoster = get_field('video_poster') ? get_field('video_poster') : get_template_directory_uri() . '/assets/images/info-video-poster.png';
 ?>
 
-<div <?= $anchor; ?> class="<?= esc_attr($class_name); ?>">
-    <div class="logo-wrapper">
+<div class="<?= esc_attr($class_name); ?>">
+    <div class="logo-wrapper" <?= $anchor; ?>>
         <img src="<?php echo $logo; ?>" alt="logo" class="full-size-img full-size-img-contain" />
     </div>
     <?php if ($blockTitle) : ?>

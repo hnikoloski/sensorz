@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
 
             $('.sensorz-use-cases-short-archive-block .posts-container .single-post .post_title').on('click', function () {
                 $(this).toggleClass('active');
-                $(this).next().slideToggle();
+                $(this).next().slideToggle(500);
             });
         }
     }

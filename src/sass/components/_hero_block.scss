@@ -19,7 +19,9 @@
     pointer-events: none;
   }
   @include for-tablet {
-    padding: 15.2rem 0 13.2rem 0;
+    padding: 15.2rem 0 14rem 0;
+    text-align: center;
+    margin-bottom: 19.1rem;
   }
 
   .wrapper {
@@ -51,7 +53,7 @@
         text-transform: uppercase;
         margin-bottom: 2.3rem;
         @include for-tablet {
-          font-size: 3.7rem;
+          font-size: 4.4rem;
           text-align: center;
         }
       }
@@ -62,7 +64,7 @@
         line-height: 1.36;
         max-width: 53.6rem;
         @include for-tablet {
-          font-size: 2.4rem;
+          font-size: 1.4rem;
           max-width: 100%;
         }
       }
@@ -89,6 +91,12 @@
           background: url("../../assets/images/deco-lines.svg");
           @include bg-props(contain, center, no-repeat);
           opacity: 0.23;
+          @include for-phone {
+            width: 3.94rem;
+            height: 6.62rem;
+            bottom: -4.3rem;
+            left: -3rem;
+          }
         }
         &::after {
           content: "";
@@ -101,6 +109,13 @@
           background: url("../../assets/images/deco-lines.svg");
           @include bg-props(contain, center, no-repeat);
           opacity: 0.66;
+          @include for-phone {
+            height: 5.456rem;
+            width: 3.246rem;
+            top: 0.3rem;
+            right: -2.6rem;
+            z-index: -1;
+          }
         }
         .deco-line {
           position: absolute;
@@ -213,6 +228,10 @@
       max-width: 90%;
       width: 90%;
       justify-content: space-between;
+      // margin-bottom: -19.1rem;
+      position: absolute;
+      @include hor-center();
+      bottom: -19.1rem;
     }
     .single-box {
       flex: 0 0 20rem;
@@ -247,6 +266,14 @@
         @include borderRadius(2.3rem);
         box-shadow: 0 0.4rem 3rem var(--shadowColor);
         margin-right: 1.9rem;
+        @include for-tablet {
+          width: 3.4rem;
+          height: 3.4rem;
+          flex: 0 0 3.4rem;
+          max-width: 3.4rem;
+          padding: 0.8rem;
+          margin-right: 1.4rem;
+        }
         img {
           @include fullSizeImg(contain);
         }
@@ -258,6 +285,13 @@
         color: $primary;
         font-size: 1.7rem;
         line-height: 1.35;
+        @include for-tablet {
+          font-size: 1.4rem;
+          text-align: left;
+          flex: 0 0 calc(100% - 3.4rem - 1.4rem);
+          max-width: calc(100% - 3.4rem - 1.4rem);
+          width: calc(100% - 3.4rem - 1.4rem);
+        }
       }
     }
   }

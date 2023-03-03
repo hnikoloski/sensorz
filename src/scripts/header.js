@@ -1,12 +1,40 @@
 jQuery(document).ready(function ($) {
     // $("#page").css("padding-top", $("#masthead").outerHeight());
-    // $(window).scroll(function () {
-    //     if ($(this).scrollTop() > 0) {
-    //         $('#masthead').addClass('sticky');
-    //     } else {
-    //         $('#masthead').removeClass('sticky');
-    //     }
-    // });
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 0) {
+            $('#masthead').addClass('sticky');
+        } else {
+            $('#masthead').removeClass('sticky');
+        }
+
+        // Check if the anchor is in the viewport
+        var $anchors = $('#masthead .menu li.menu-item a');
+        $anchors.each(function () {
+            var $this = $(this);
+            var $anchor = $this.attr('href');
+            if ($anchor == '#top') {
+                return;
+            }
+            if ($($anchor).length) {
+                if (isScrolledIntoView($($anchor))) {
+                    $anchors.removeClass('active');
+                    $this.addClass('active');
+                }
+            }
+        });
+
+    });
+
+    function isScrolledIntoView(elem) {
+        var docViewTop = $(window).scrollTop();
+        var docViewBottom = docViewTop + $(window).height();
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+
 
 
     if ($('#masthead li.btn').length) {
@@ -50,4 +78,24 @@ jQuery(document).ready(function ($) {
         $('#masthead .menu').toggleClass('active');
     });
 
+    $('#masthead .menu li.menu-item a').on('click', function (e) {
+        e.preventDefault();
+        var $this = $(this);
+
+        // Go to the anchor
+        var $anchor = $this.attr('href');
+        if ($anchor == '#top') {
+            // Scroll to top
+            $('html, body').animate({
+                scrollTop: 0
+            }, 100);
+            return;
+        }
+
+        // Scroll to the anchor
+        $('html, body').animate({
+            scrollTop: $($anchor).offset().top - $('#masthead').outerHeight()
+        }, 100);
+
+    });
 });

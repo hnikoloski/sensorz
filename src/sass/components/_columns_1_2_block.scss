@@ -64,8 +64,8 @@
           }
         }
         .img-wrapper {
-          width: 31.5rem;
-          height: 19.8rem;
+          width: 100%;
+          height: auto;
           margin-top: 3.8rem;
           margin-left: auto;
           margin-right: auto;
@@ -103,8 +103,11 @@
           .img-wrapper {
             margin-left: auto;
             margin-top: auto;
-            width: 53.7rem;
-            height: 33.2rem;
+            margin-right: 0;
+            // width: 53.7rem;
+            // height: 33.2rem;
+            width: 100%;
+            height: auto;
             @include for-phone {
               width: 100%;
               height: auto;
